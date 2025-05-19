@@ -1,0 +1,104 @@
+/* src/pages/Dashboard.css */
+
+.dashboard {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 16px;
+    text-align: center;
+  }
+  
+  /* Zona de status + buton (sub titlu, deasupra grid-ului) */
+  .action-section {
+    display: flex;
+    flex-direction: column;    /* stack vertical */
+    align-items: center;       /* centrare orizontală */
+    gap: 12px;                 /* spațiu între StatusCard și button */
+    margin: 24px 0;            /* distanță față de titlu și grid */
+  }
+  
+  /* Grid de metrici, cu flexbox pentru item-uri independente */
+  .tiles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: flex-start;   /* nu stretch pe înălțime */
+    justify-content: center;
+  }
+  
+  /* Card metrică */
+  .metric-container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px 16px 32px;   /* mai mult spațiu jos pentru buton */
+    flex: 1 1 220px;           /* crește și își păstrează min-width */
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Elevare și umbră soft la hover */
+  .metric-container:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.05),
+      0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Butonul Show/Hide history */
+  .history-toggle-btn {
+    margin: 12px auto 16px;    /* spațiu deasupra și mai mult jos */
+    background: transparent;
+    border: 2px solid #4a8f6f;
+    color: #4a8f6f;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .history-toggle-btn:hover {
+    background: #4a8f6f;
+    color: #ffffff;
+  }
+  
+  /* Butonul Water the plant */
+  .action-btn {
+    background: #38a169;
+    color: #ffffff;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .action-btn:hover {
+    background: #2f855a;
+    transform: translateY(-2px);
+  }
+  .action-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  }
+  
+  /* poți pune asta în Dashboard.css sau App.css */
+
+.action-btn {
+    background: linear-gradient(90deg, #38a169 0%, #68d391 100%);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(56,130,105,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(56,130,105,0.35);
+  }
+  

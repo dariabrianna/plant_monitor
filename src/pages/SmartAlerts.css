@@ -1,0 +1,25 @@
+.alerts-page {
+    max-width: 720px;
+    margin: 24px auto;
+    padding: 0 16px;
+    text-align: left;
+  }
+  
+  .alerts-page h2 {
+    color: #276749;
+    margin-bottom: 12px;
+  }
+  
+  .alerts-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .alerts-list li {
+    background: #f0faf6;
+    margin-bottom: 8px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  

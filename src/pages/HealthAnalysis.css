@@ -1,0 +1,16 @@
+.analysis-page {
+    max-width: 720px;
+    margin: 24px auto;
+    padding: 0 16px;
+    text-align: left;
+  }
+  
+  .analysis-page h2 {
+    color: #276749;
+    margin-bottom: 12px;
+  }
+  
+  .analysis-page p {
+    margin-bottom: 16px;
+  }
+  

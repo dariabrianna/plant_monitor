@@ -1,0 +1,27 @@
+.metric-tile {
+    background: #f0faf6;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .metric-tile .icon {
+    font-size: 32px;
+    color: #4a8f6f;
+    margin-right: 12px;
+  }
+  
+  .metric-tile .info .label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .metric-tile .info .value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2e5939;
+  }
+  
