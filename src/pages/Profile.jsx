@@ -1,5 +1,6 @@
 // src/pages/Profile.jsx
 import React, { useContext, useState, useRef } from 'react';
+import axios from 'axios';
 import { AuthContext } from '../contexts/AuthContext';
 import { User } from 'lucide-react';
 import './Profile.css';
@@ -12,17 +13,23 @@ export default function Profile() {
     updatePassword
   } = useContext(AuthContext);
 
-  const [email, setEmail]         = useState(user.email || '');
+  const [email, setEmail]         = useState(user?.email || '');
   const [oldPass, setOldPass]     = useState('');
   const [newPass, setNewPass]     = useState('');
   const [confirmPass, setConfirm] = useState('');
   const fileInputRef = useRef();
 
   // 1. Change Email
-  const handleEmailSubmit = e => {
+  const handleEmailSubmit = async e => {
     e.preventDefault();
-    updateEmail(email);
-    alert('Email updated');
+    try {
+      const { data } = await axios.put('/api/users/me/email', { email });
+      updateEmail(data.email);
+      alert('Email updated');
+    } catch (err) {
+      console.error(err);
+      alert('Failed to update email');
+    }
   };
 
   // 2. Change Profile Picture
@@ -38,17 +45,26 @@ export default function Profile() {
   };
 
   // 3. Change Password
-  const handlePasswordSubmit = e => {
+  const handlePasswordSubmit = async e => {
     e.preventDefault();
     if (newPass !== confirmPass) {
       alert("Passwords don't match");
       return;
     }
-    updatePassword(oldPass, newPass);
-    setOldPass('');
-    setNewPass('');
-    setConfirm('');
-    alert('Password change requested');
+    try {
+      await axios.put('/api/users/me/password', {
+        oldPassword: oldPass,
+        newPassword: newPass
+      });
+      updatePassword(oldPass, newPass);
+      setOldPass(''); 
+      setNewPass(''); 
+      setConfirm('');
+      alert('Password updated');
+    } catch (err) {
+      console.error(err);
+      alert('Failed to update password');
+    }
   };
 
   return (
@@ -61,7 +77,7 @@ export default function Profile() {
         onClick={() => fileInputRef.current.click()}
       >
         <div className="profile-picture-wrapper">
-          {user.profilePicture ? (
+          {user?.profilePicture ? (
             <img
               src={user.profilePicture}
               alt="Profile"

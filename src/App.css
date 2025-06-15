@@ -57,3 +57,14 @@ body {
   background: linear-gradient(180deg, #f0fff4 0%, #ffffff 60%);
   min-height: 100vh;
 }
+
+
+.app-main {
+  padding: 16px 8px;
+}
+
+@media (min-width: 640px) {
+  .app-main {
+    padding: 32px 16px;
+  }
+}

@@ -4,13 +4,17 @@ import './Dashboard.css';
 import MetricTile from '../components/MetricTile';
 import HistoryTable from '../components/HistoryTable';
 import StatusCard from '../components/StatusCard';
+import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
+
+  const navigate = useNavigate();
+
   const metrics = [
     { type: 'temperature', label: 'Temperature', value: '30°C' },
     { type: 'waterLevel',  label: 'Water Tank',  value: '99%'  },
     { type: 'airQuality',  label: 'Air Quality',  value: '20 ppm' },
-    { type: 'light',       label: 'Light Intensity', value: '6962 lx' },
+    { type: 'uvLevel',     label: 'UV Level',        value: '150 µW/cm²' },
     { type: 'humidity',    label: 'Humidity',     value: '50%'  },
     { type: 'moisture',    label: 'Soil Moisture', value: '67%'  },
   ];
@@ -32,11 +36,11 @@ export default function Dashboard() {
       { time: '10:00', value: '19 ppm' },
       { time: '12:00', value: '20 ppm' },
     ],
-    light: [
-      { time: '08:00', value: '5000 lx' },
-      { time: '10:00', value: '6000 lx' },
-      { time: '12:00', value: '6962 lx' },
-    ],
+    uvLevel: [
+           { time: '08:00', value: '120 µW/cm²' },
+           { time: '10:00', value: '135 µW/cm²' },
+           { time: '12:00', value: '150 µW/cm²' },
+         ],
     humidity: [
       { time: '08:00', value: '45%' },
       { time: '10:00', value: '48%' },
@@ -66,6 +70,12 @@ export default function Dashboard() {
       <div className="action-section">
         <StatusCard status="Good" />
         <button className="action-btn">Water the plant</button>
+        <button
+         className="analysis-btn"
+         onClick={() => navigate('/analysis')}
+       >
+         View Health Analysis
+       </button>
       </div>
 
       {/* ─── Aici vine grid-ul de metrici ─── */}

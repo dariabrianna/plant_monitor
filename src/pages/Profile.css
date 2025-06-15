@@ -128,5 +128,36 @@
   }
   
 
+  /* Auth forms full‐width on mobile */
+.auth-form {
+  width: 100%;
+  max-width: 320px;
+  padding: 24px 16px;
+}
+
+/* Profile page */
+.profile-page {
+  padding: 16px;
+}
+
+/* Profile forms full‐width */
+.profile-form {
+  width: 100%;
+}
+
+/* Inputs full‐width */
+.profile-form input,
+.auth-form input {
+  width: 100%;
+}
+
+/* On larger screens, center content & add side padding */
+@media (min-width: 640px) {
+  .auth-page,
+  .profile-page {
+    padding: 0 32px;
+  }
+}
+
   
   

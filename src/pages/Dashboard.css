@@ -23,6 +23,9 @@
     gap: 24px;
     align-items: flex-start;   /* nu stretch pe înălțime */
     justify-content: center;
+    display: flex;
+  flex-direction: column;
+  gap: 16px;
   }
   
   /* Card metrică */
@@ -36,6 +39,8 @@
     flex-direction: column;
     align-items: stretch;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
+    flex: none;
+  max-width: 100%;
   }
   
   /* Elevare și umbră soft la hover */
@@ -102,3 +107,46 @@
     box-shadow: 0 8px 20px rgba(56,130,105,0.35);
   }
   
+  .analysis-btn {
+    background: transparent;
+    border: 2px solid #276749;
+    color: #276749;
+    border-radius: 24px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  
+  .analysis-btn:hover {
+    background: #276749;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .action-section {
+    gap: 8px;
+    margin: 16px 0;
+  }
+  
+  /* Butoane mai late pe mobile */
+  .analysis-btn,
+  .action-btn {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .tiles-grid {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .metric-container {
+      flex: 1 1 220px;
+      max-width: 260px;
+    }
+    .analysis-btn,
+    .action-btn {
+      width: auto;
+    }
+  }

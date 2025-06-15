@@ -1,3 +1,4 @@
+// src/components/MetricTile.jsx
 import React from 'react';
 import './MetricTile.css';
 import { Thermometer, Droplet, Sun, Wind, CloudSnow, Gauge } from 'lucide-react';
@@ -5,7 +6,8 @@ import { Thermometer, Droplet, Sun, Wind, CloudSnow, Gauge } from 'lucide-react'
 const iconMap = {
   temperature: <Thermometer />,
   moisture:    <Droplet />,
-  light:       <Sun />,
+light:       <Sun />,
+ uvLevel:     <Sun />,        // folosim același icon Sun pentru UV Level
   humidity:    <Wind />,
   airQuality:  <CloudSnow />,
   waterLevel:  <Gauge />,
